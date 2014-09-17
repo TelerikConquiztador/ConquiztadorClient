@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Conquiztador</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+</head>
+<body ng-app="conquiztadorApp" ng-controller="PageController" ng-cloak>
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#/home" class="navbar-brand">Conquiztador</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#/home">Home</a>
+                </li>
+                <li>
+                    <a href="#/test">Test Play game</a>
+                </li>
+                <li>
+                    <a href="#/all-artists">Best scores</a>
+                </li>
+                <li>
+                    <a href="#/questions">Questions</a>
+                </li>
+            </ul>
+
+            <div class="navbar-right" ng-controller="LoginCtrl">
+                <form class="navbar-form" ng-hide="identity.isAuthenticated()">
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="username" ng-model="user.UserName"/>
+                        <input class="form-control" type="password" placeholder="password" ng-model="user.Password"/>
+                        <button class="btn.btn-danger" ng-click="login(user)">Login</button>
+                        <a class="btn.btn-danger" href="#/signup">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div ng-view>
+
+</div>
+
+<hr />
+<footer class="text-center" ng-cloak>
+    <small><strong>Author:</strong> <a href="https://github.com/wIksS/ConquiztadorWebApi" target="_blank">{{team}}</a>, <strong>Copyright:</strong> <a href="#" target="_blank">{{ copyright }} 2014</a></small>
+    <br />
+    <small><strong><a href="https://github.com/wIksS/ConquiztadorWebApi" target="_blank">Open Source Project</a> powered by:</strong> <a href="http://angularjs.org/" target="_blank">AngularJS</a> and <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></small>
+    <br />
+</footer>
+<hr />
+
+<script src="lib/jquery.min.js"></script>
+<script src="lib/hmac-sha1.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-resource.min.js"></script>
+<script src="lib/angular/angular-route.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/TestServicesController.js"></script>
+<script src="js/controllers/PageController.js"></script>
+<script src="js/controllers/QuestionsController.js"></script>
+<script src="js/account/LoginCtrl.js"></script>
+<script src="js/account/SignUpCtrl.js"></script>
+<script src="js/account/identity.js"></script>
+<script src="js/services/testData.js"></script>
+<script src="js/services/questionsData.js"></script>
+<script src="js/services/usersData.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+
+#gameFieldWrapper{
+    margin-top: 100px;
+    position: relative;
+    height: 400px;
+}
+
+#00 {
+    margin-left: 50px;
+    position: relative;
+}
+
+#free00 {
+    position: absolute;
+    left: 60px;
+}
+
+#green00 {
+    position: absolute;
+    left: 60px;
+}
+
+#red00 {
+    position: absolute;
+    left: 60px;
+}
+
+#free01 {
+    position: absolute;
+    left: 137px;
+    top: 32px;
+}
+
+#green01 {
+    position: absolute;
+    left: 137px;
+    top: 32px;
+}
+
+#red01 {
+    position: absolute;
+    left: 137px;
+    top: 32px;
+}
+
+#free02 {
+    position: absolute;
+    left: 210px;
+    top: 46px;
+}
+
+#green02 {
+    position: absolute;
+    left: 210px;
+    top: 46px;
+}
+
+#red02 {
+    position: absolute;
+    left: 210px;
+    top: 46px;
+}
+
+#free03 {
+    position: absolute;
+    left: 352px;
+    top: 15px;
+}
+
+#green03 {
+    position: absolute;
+    left: 352px;
+    top: 15px;
+}
+
+#red03 {
+    position: absolute;
+    left: 352px;
+    top: 15px;
+}
+
+#free04 {
+    position: absolute;
+    left: 407px;
+    top: 53px;
+}
+
+#green04 {
+    position: absolute;
+    left: 407px;
+    top: 53px;
+}
+
+#red04 {
+    position: absolute;
+    left: 407px;
+    top: 53px;
+}
+
+#free05 {
+    position: absolute;
+    left: 441px;
+    top: 10px;
+}
+
+#green05 {
+    position: absolute;
+    left: 441px;
+    top: 10px;
+}
+
+#red05 {
+    position: absolute;
+    left: 441px;
+    top: 10px;
+}
+
+#free06 {
+    position: absolute;
+    left: 478px;
+    top: 47px;
+}
+
+#green06 {
+    position: absolute;
+    left: 478px;
+    top: 47px;
+}
+
+#red06 {
+    position: absolute;
+    left: 478px;
+    top: 47px;
+}
+
+#free07 {
+    position: absolute;
+    top: 112px;
+}
+
+#green07 {
+    position: absolute;
+    top: 112px;
+}
+
+#red07 {
+    position: absolute;
+    top: 112px;
+}
+
+#free08 {
+    position: absolute;
+    left: 153px;
+    top: 100px;
+}
+
+#green08 {
+    position: absolute;
+    left: 153px;
+    top: 100px;
+}
+
+#red08 {
+    position: absolute;
+    left: 153px;
+    top: 100px;
+}
+
+#free09 {
+    position: absolute;
+    left: 359px;
+    top: 100px;
+}
+
+#green09 {
+    position: absolute;
+    left: 359px;
+    top: 100px;
+}
+
+#red09 {
+    position: absolute;
+    left: 359px;
+    top: 100px;
+}
+
+#free10 {
+    position: absolute;
+    left: 463px;
+    top: 115px;
+}
+
+#green10 {
+    position: absolute;
+    left: 463px;
+    top: 115px;
+}
+
+#red10 {
+    position: absolute;
+    left: 463px;
+    top: 115px;
+}
+
+#free11 {
+    position: absolute;
+    left: 10px;
+    top: 173px;
+}
+
+#green11 {
+    position: absolute;
+    left: 10px;
+    top: 173px;
+}
+
+#red11 {
+    position: absolute;
+    left: 10px;
+    top: 173px;
+}
+
+#free12 {
+    position: absolute;
+    left: 190px;
+    top: 163px;
+}
+
+#green12 {
+    position: absolute;
+    left: 190px;
+    top: 163px;
+}
+
+#red12 {
+    position: absolute;
+    left: 190px;
+    top: 163px;
+}
+
+#free13 {
+    position: absolute;
+    left: 310px;
+    top: 168px;
+}
+
+#green13 {
+    position: absolute;
+    left: 310px;
+    top: 168px;
+}
+
+#red13 {
+    position: absolute;
+    left: 310px;
+    top: 168px;
+}
+
+#free14 {
+    position: absolute;
+    left: 370px;
+    top: 183px;
+}
+
+#green14 {
+    position: absolute;
+    left: 370px;
+    top: 183px;
+}
+
+#red14 {
+    position: absolute;
+    left: 370px;
+    top: 183px;
+}
+
+#free15 {
+    position: absolute;
+    left: 20px;
+    top: 223px;
+}
+
+#green15 {
+    position: absolute;
+    left: 20px;
+    top: 223px;
+}
+
+#red15 {
+    position: absolute;
+    left: 20px;
+    top: 223px;
+}
+
+#free16 {
+    position: absolute;
+    left: 145px;
+    top: 230px;
+}
+
+#green16 {
+    position: absolute;
+    left: 145px;
+    top: 230px;
+}
+
+#red16 {
+    position: absolute;
+    left: 145px;
+    top: 230px;
+}
+
+#free17 {
+    position: absolute;
+    left: 280px;
+    top: 238px;
+}
+
+#green17 {
+    position: absolute;
+    left: 280px;
+    top: 238px;
+}
+
+#red17 {
+    position: absolute;
+    left: 280px;
+    top: 238px;
+}
