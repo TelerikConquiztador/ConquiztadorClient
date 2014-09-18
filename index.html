@@ -40,15 +40,16 @@
                     </div>
                 </form>
 
-                <ul class="nav.navbar-nav.navbar-right" ng-show="logged">
+                <ul class="nav navbar-nav navbar-right" ng-show="logged">
                     <li class="dropdown">
-                    <a class="dropdown-toggle" href="" data-toggle="dropdown"> {{ user.userName }}</a>
-                    <span class="caret"></span>
+                        <a class="dropdown-toggle" href="" data-toggle="dropdown-toggle ng-binding"> {{ user.userName }}
+                        <span class="caret"></span>
                         <ul class="dropdown-menu">
                             <li>
                             <a href="#" ng-click="logout()">Sign out</a>
                             </li>
                         </ul>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -86,6 +87,7 @@
 <script src="js/services/testData.js"></script>
 <script src="js/services/questionsData.js"></script>
 <script src="js/services/usersData.js"></script>
+<script src=http://cdn.pubnub.com/pubnub-3.5.3.min.js></script>
 
 </body>
 </html>

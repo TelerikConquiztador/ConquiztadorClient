@@ -25,8 +25,9 @@ conquiztadorApp.controller('QuestionsController',
     };
 
     $scope.getClosedQuestion = function () {
-//        questionsData.getClosedQuestion(Math.floor(Math.random() * 1), function (question) {
-            questionsData.getClosedQuestion(11, function (question) {
+        var randomId = Math.floor(Math.random() * 18) + 11;
+        questionsData.getClosedQuestion(randomId, function (question) {
+//            questionsData.getClosedQuestion(11, function (question) {
             console.log(question);
             $scope.closedQuestion = question;
         });
@@ -40,7 +41,8 @@ conquiztadorApp.controller('QuestionsController',
     };
 
     $scope.solveClosed = function (data) {
-        if (data == $scope.closedQuestion.answer){
+        console.log(data);
+        if (data == $scope.closedQuestion.CorrectAnswer){
             alert('Correct!');
             $scope.currentRightAnswers++;
         }
