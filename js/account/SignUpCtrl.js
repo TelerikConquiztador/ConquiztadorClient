@@ -4,14 +4,16 @@ conquiztadorApp.controller('SignUpCtrl',
     function ($scope, $http, $location, usersData){
 
         $scope.signup = function(user){
-            var user = {
-                "Email": "asd@asd.com",
-                "Password": "asdasd",
-                "ConfirmPassword": "asdasd"
+            var newUser = {
+                "Email": user.Email,
+                "Password": user.Password,
+                "ConfirmPassword": user.Password
             };
 
-            usersData.register(user).success(alert('Registered!'));
+            console.log(newUser);
+            usersData.register(newUser).success(function (res) {
+                console.log(res);
+            });
+            $scope.registered = true;
         }
-
-
     });

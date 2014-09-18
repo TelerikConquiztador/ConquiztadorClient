@@ -1,18 +1,30 @@
 'use strict';
 
 conquiztadorApp.controller('LoginCtrl',
-    function ($scope, $location, identity, usersData){
+    function ($scope, $rootScope, $location, $window, identity, usersData){
 
         $scope.identity = identity;
 
         $scope.login = function(user){
-            user.Password = CryptoJS.SHA1( user.Password).toString();
-
-            usersData.login(user).success(alert('Logged as ' + user.UserName));
+            usersData.login(user)
+                .success(function (data) {
+                    // authentication OK
+                    $rootScope.user = data;
+                    $rootScope.$emit('userChanged');
+                    $location.url('/');
+                    $scope.logged = true;
+                    $window.sessionStorage.setItem("user", JSON.stringify(data));
+                    $scope.user = data;
+                    console.log(data);
+                })
+                .error(function (error) {
+                    alert(error);
+                })
         };
 
         $scope.logout = function(){
-
+            $scope.logged = false;
+            $window.sessionStorage.clear();
         };
 
     });

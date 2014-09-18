@@ -30,7 +30,8 @@
             </ul>
 
             <div class="navbar-right" ng-controller="LoginCtrl">
-                <form class="navbar-form" ng-hide="identity.isAuthenticated()">
+
+                <form class="navbar-form" ng-hide="logged">
                     <div class="form-group">
                         <input class="form-control" type="text" placeholder="username" ng-model="user.UserName"/>
                         <input class="form-control" type="password" placeholder="password" ng-model="user.Password"/>
@@ -38,6 +39,18 @@
                         <a class="btn.btn-danger" href="#/signup">Sign Up</a>
                     </div>
                 </form>
+
+                <ul class="nav.navbar-nav.navbar-right" ng-show="logged">
+                    <li class="dropdown">
+                    <a class="dropdown-toggle" href="" data-toggle="dropdown"> {{ user.userName }}</a>
+                    <span class="caret"></span>
+                        <ul class="dropdown-menu">
+                            <li>
+                            <a href="#" ng-click="logout()">Sign out</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
 
