@@ -8,11 +8,8 @@ var conquiztadorApp = angular
             .when('/home', {
                 templateUrl: 'templates/home.html'
             })
-            .when('/test', {
-                templateUrl: 'templates/test.html'
-            })
-            .when('/test/:name', {
-                templateUrl: 'templates/test.html'
+            .when('/chat', {
+                templateUrl: 'templates/chat.html'
             })
             .when('/questions', {
                 templateUrl: 'templates/questions.html'
