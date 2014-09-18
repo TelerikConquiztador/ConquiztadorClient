@@ -1,7 +1,7 @@
 'use strict';
 
 conquiztadorApp.controller('QuestionsController',
-    function ($scope, $http, $routeParams, $location, $window, questionsData){
+    function ($scope, $http, $routeParams, $location, $window, questionsData, usersData){
 
     $scope.openQuestionActive = false;
     $scope.closedQuestionActive = false;
@@ -52,7 +52,14 @@ conquiztadorApp.controller('QuestionsController',
         {
             alert('End of game');
             $scope.gameInProgress = false;
-            $window.sessionStorage.setItem("score", $scope.currentRightAnswers)
+            var user = $window.sessionStorage.getItem('user');
+
+            if (user.Result == null || user.Result == undefined)
+            {
+                user.Result = 0;
+            }
+            user.Result += $scope.currentRightAnswers;
+
 
             $scope.currentRightAnswers = 0;
             $scope.totalQuestionsAsked = 0;

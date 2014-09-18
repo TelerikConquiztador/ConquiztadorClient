@@ -17,6 +17,9 @@ var conquiztadorApp = angular
             .when('/signup', {
                 templateUrl: 'templates/signup.html'
             })
+            .when('/high-scores', {
+                templateUrl: 'templates/high-scores.html'
+            })
     })
     .constant('team', 'Team FIG')
     .constant('copyright', 'The team');
