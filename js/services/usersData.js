@@ -43,7 +43,7 @@ conquiztadorApp.factory('usersData', function ($http, $window) {
 //            return $http.post('http://localhost:34320/api/Account/Register', user);
         },
         update: function (score) {
-            var user = jQuery.parseJSON($window.getItem('user'));
+            var user = jQuery.parseJSON($window.sessionStorage.getItem('user'));
             console.log(user);
             var sessionKey = user.access_token;
             console.log(sessionKey);
