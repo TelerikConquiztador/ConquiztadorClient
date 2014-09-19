@@ -48,7 +48,7 @@ conquiztadorApp.factory('usersData', function ($http, $window) {
             var sessionKey = user.access_token;
             console.log(sessionKey);
 
-            console.log(score)
+            console.log(score);
 
             return $http.put('http://conquiztador.apphb.com/api/Players/Update?score=' + score,
                 {
