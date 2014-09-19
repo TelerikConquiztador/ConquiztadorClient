@@ -1,10 +1,10 @@
 'use strict';
 
-conquiztadorApp.factory('questionsData', function ($http) {
+conquiztadorApp.factory('questionsData', function ($http, baseUrl) {
 
     return {
         getOpenQuestion: function (id, success) {
-            $http({method: 'GET', url: 'http://conquiztador.apphb.com/api/ClosedQuestions/All'})
+            $http({method: 'GET', url: baseUrl + 'ClosedQuestions/All'})
                 .success(function(data,status,headers,config){
                     var openQuestion = {
                         question : "Who is number one?",
@@ -18,7 +18,7 @@ conquiztadorApp.factory('questionsData', function ($http) {
                 });
         },
         getClosedQuestion: function(id, success){
-            $http({method: 'GET', url: 'http://conquiztador.apphb.com/api/ClosedQuestions/ById/' + id})
+            $http({method: 'GET', url: baseUrl + 'ClosedQuestions/ById/' + id})
                 .success(function(data,status,headers,config){
                     console.log(data);
                     success(data);

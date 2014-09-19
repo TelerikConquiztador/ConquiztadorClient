@@ -21,5 +21,7 @@ var conquiztadorApp = angular
                 templateUrl: 'templates/high-scores.html'
             })
     })
+    .constant('toastr', toastr)
+    .constant('baseUrl', 'http://conquiztador.apphb.com/api/')
     .constant('team', 'Team FIG')
     .constant('copyright', 'The team');

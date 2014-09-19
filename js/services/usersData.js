@@ -1,6 +1,6 @@
 'use strict';
 
-conquiztadorApp.factory('usersData', function ($http, $window) {
+conquiztadorApp.factory('usersData', function ($http, $window, baseUrl) {
 
     return {
         login: function (user, success) {
@@ -22,7 +22,7 @@ conquiztadorApp.factory('usersData', function ($http, $window) {
             });
         },
         register: function (user) {
-            return $http.post('http://conquiztador.apphb.com/api/Account/Register',
+            return $http.post(baseUrl + 'Account/Register',
                 {
                     Email: user.Email,
                     Password: user.Password,
@@ -46,11 +46,19 @@ conquiztadorApp.factory('usersData', function ($http, $window) {
             var user = jQuery.parseJSON($window.sessionStorage.getItem('user'));
             console.log(user);
             var sessionKey = user.access_token;
+            var username = user.userName;
+
             console.log(sessionKey);
 
             console.log(score);
 
-            return $http.put('http://localhost:34320/api/Players/Update?score=' + score,
+
+            // { headers: authorization.getAuthorizationHeader() }
+            return $http.post(baseUrl + 'UpdateScore',
+                {
+                    username: username,
+                    score: score
+                },
                 {
                     transformRequest: function (obj) {
                         var str = [];
@@ -59,9 +67,20 @@ conquiztadorApp.factory('usersData', function ($http, $window) {
                         return str.join("&");
                     },
                     headers: {
-                        'Authorization': 'Bearer ' + sessionKey
+                        'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 });
+            /*
+             return $http({
+             method: 'PUT',
+             url: 'http://localhost:34320/api/Players/Update?score=' + score,
+             beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'bearer ' + sessionKey)},
+             contentType:"application/x-www-form-urlencoded"
+             }).success(function() {
+             console.log("POST Json object worked!");
+             }).error(function(){
+             console.log("POST Json object failed!");
+             });*/
 
 //            return $http.post('http://localhost:34320/api/Account/Register', user);
         }

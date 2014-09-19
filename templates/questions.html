@@ -103,14 +103,16 @@
             </div>
 
             <div class="col-lg-4">
-                <h1>Total questions asked = {{totalQuestionsAsked}}</h1>
-                <h1>Right answers = {{currentRightAnswers}}</h1>
-                <h1>Get questions</h1>
+                <h1>Current question <strong>{{totalQuestionsAsked}}</strong></h1>
+                <h1>Score <strong>{{currentRightAnswers}}</strong></h1>
+                <br/>
                 <!--<div class="row">-->
                     <!--<a ng-click="getOpenQuestion()" href="" class="btn btn-primary" id="get-open-question">Get open question</a>-->
                 <!--</div>-->
-                <div class="row">
-                    <a ng-click="getClosedQuestion()" href="" class="btn btn-primary" id="get-closed-question">Get closed question</a>
+                <div class="container">
+                    <div class="row">
+                        <a ng-click="getClosedQuestion()" href="" class="btn btn-primary" id="get-closed-question">Next</a>
+                    </div>
                 </div>
                 <!--<div ng-show="openQuestionActive">-->
                     <!--<div class="container" id="open-qst">-->
@@ -124,34 +126,35 @@
                 <!--</div>-->
                 <div class="container" id="closed-qst"  ng-show="closedQuestionActive">
                     <div class="row">
-                        {{closedQuestion.Question}}
+                        <h2>{{closedQuestion.Question}}</h2>
                     </div>
                     <div class="radio">
                         <label>
                             <input type="radio" name="closed-answers" value="{{closedQuestion.AnswerA}}" ng-model="closedQuestionAnswer" checked="true">
-                            | {{closedQuestion.AnswerA}}
+                            <strong>{{closedQuestion.AnswerA}}</strong>
                         </label>
                     </div>
                     <div class="radio">
                         <label>
                             <input type="radio" name="closed-answers" value="{{closedQuestion.AnswerB}}" ng-model="closedQuestionAnswer">
-                            | {{closedQuestion.AnswerB}}
+                            <strong>{{closedQuestion.AnswerB}}</strong>
                         </label>
                     </div>
                     <div class="radio">
                         <label>
                             <input type="radio" name="closed-answers" value="{{closedQuestion.AnswerC}}" ng-model="closedQuestionAnswer">
-                            | {{closedQuestion.AnswerC}}
+                            <strong>{{closedQuestion.AnswerC}}</strong>
                         </label>
                     </div>
                     <div class="radio">
                         <label>
                             <input type="radio" name="closed-answers" value="{{closedQuestion.AnswerD}}" ng-model="closedQuestionAnswer">
-                            | {{closedQuestion.AnswerD}}
+                            <strong>{{closedQuestion.AnswerD}}</strong>
                         </label>
                     </div>
+                    <br/>
                     <div class="row">
-                        <a ng-click="solveClosed(closedQuestionAnswer)" href="" class="btn btn-primary" id="solve-closed-qst" >Solve</a>
+                        <a ng-click="solveClosed(closedQuestionAnswer)" href="" class="btn btn-primary" id="solve-closed-qst" >Answer</a>
                     </div>
                 </div>
             </div>

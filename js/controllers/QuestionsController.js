@@ -34,7 +34,6 @@ conquiztadorApp.controller('QuestionsController',
     };
 
     $scope.solveOpen = function () {
-        alert($('#openQuestion').val());
         $scope.openQuestionActive = false;
     };
 
@@ -48,7 +47,6 @@ conquiztadorApp.controller('QuestionsController',
         elementToChangeId += $scope.totalQuestionsAsked;
 
         if (data == $scope.closedQuestion.CorrectAnswer){
-            alert('Correct!');
             $scope.currentRightAnswers++;
 
             $('#free' + elementToChangeId).hide();
@@ -65,15 +63,9 @@ conquiztadorApp.controller('QuestionsController',
         $scope.totalQuestionsAsked += 1;
         if ($scope.totalQuestionsAsked == 18)
         {
-            alert('End of game');
             $scope.gameInProgress = false;
-            var user = $window.sessionStorage.getItem('user');
 
-            var result = $scope.currentRightAnswers;
-            $window.sessionStorage.setItem('user',user);
-
-            usersData.update(result);
-
+            usersData.update($scope.currentRightAnswers);
 
             $scope.currentRightAnswers = 0;
             $scope.totalQuestionsAsked = 0;

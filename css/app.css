@@ -7,6 +7,19 @@
   padding: 0 0 0.5em;
 }
 
+#toast-container{
+    position: fixed;
+    z-index: 999999;
+}
+
+.toast-top-right{
+    top: 100px;
+    right: 50px;
+}
+
+.toast-success{
+    top: 70px;
+}
 
 #gameFieldWrapper{
     margin-top: 100px;
@@ -15,23 +28,27 @@
 }
 
 #00 {
-    margin-left: 50px;
+    padding-top: 15px;
+    margin-left: 47px;
     position: relative;
 }
 
 #free00 {
     position: absolute;
-    left: 60px;
+    left: 55px;
+    top: 7px;
 }
 
 #green00 {
     position: absolute;
-    left: 60px;
+    left: 55px;
+    top: 7px;
 }
 
 #red00 {
     position: absolute;
-    left: 60px;
+    left: 55px;
+    top: 7px;
 }
 
 #free01 {

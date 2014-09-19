@@ -1,7 +1,7 @@
 'use strict';
 
 conquiztadorApp.controller('LoginCtrl',
-    function ($scope, $rootScope, $location, $window, identity, usersData){
+    function ($scope, $rootScope, $location, $window, identity, usersData, notifier){
 
         $scope.identity = identity;
 
@@ -15,10 +15,10 @@ conquiztadorApp.controller('LoginCtrl',
                     $scope.logged = true;
                     $window.sessionStorage.setItem("user", JSON.stringify(data));
                     $scope.user = data;
-                    console.log(data);
+                    notifier.success("Welcome !");
                 })
                 .error(function (error) {
-                    alert(error);
+                    notifier.error("Check you input! Couldn't log in");
                 })
         };
 
