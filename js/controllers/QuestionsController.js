@@ -52,14 +52,10 @@ conquiztadorApp.controller('QuestionsController',
             $scope.gameInProgress = false;
             var user = $window.sessionStorage.getItem('user');
 
-            if (user.Result != null || user.Result != undefined)
-            {
-                user.Result = 0;
-            }
-            user.Result += $scope.currentRightAnswers;
+            var result = $scope.currentRightAnswers;
             $window.sessionStorage.setItem('user',user);
 
-            usersData.update(user.Result);
+            usersData.update(result);
 
 
             $scope.currentRightAnswers = 0;

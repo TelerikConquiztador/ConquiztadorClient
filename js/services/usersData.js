@@ -50,7 +50,7 @@ conquiztadorApp.factory('usersData', function ($http, $window) {
 
             console.log(score);
 
-            return $http.put('http://conquiztador.apphb.com/api/Players/Update?score=' + score,
+            return $http.put('http://localhost:34320/api/Players/Update?score=' + score,
                 {
                     transformRequest: function (obj) {
                         var str = [];
@@ -59,8 +59,7 @@ conquiztadorApp.factory('usersData', function ($http, $window) {
                         return str.join("&");
                     },
                     headers: {
-                        'Authorization': 'Bearer ' + sessionKey,
-                        'Content-Type': 'application/x-www-form-urlencoded'
+                        'Authorization': 'Bearer ' + sessionKey
                     }
                 });
 
