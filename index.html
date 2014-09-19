@@ -19,13 +19,13 @@
                     <a href="#/home">Home</a>
                 </li>
                 <li>
-                    <a href="#/test">Test Play game</a>
+                    <a href="#/questions">Play</a>
                 </li>
                 <li>
-                    <a href="#/all-artists">Best scores</a>
+                    <a href="#/chat">Live chat</a>
                 </li>
                 <li>
-                    <a href="#/questions">Questions</a>
+                    <a href="#/high-scores">High scores</a>
                 </li>
             </ul>
 
@@ -35,19 +35,16 @@
                     <div class="form-group">
                         <input class="form-control" type="text" placeholder="username" ng-model="user.UserName"/>
                         <input class="form-control" type="password" placeholder="password" ng-model="user.Password"/>
-                        <button class="btn.btn-danger" ng-click="login(user)">Login</button>
-                        <a class="btn.btn-danger" href="#/signup">Sign Up</a>
+                        <button class="btn btn-danger" ng-click="login(user)">Login</button>
+                        <a class="btn btn-danger" href="#/signup">Sign Up</a>
                     </div>
                 </form>
 
-                <ul class="nav.navbar-nav.navbar-right" ng-show="logged">
+                <ul class="nav navbar-nav navbar-right" ng-show="logged">
                     <li class="dropdown">
-                    <a class="dropdown-toggle" href="" data-toggle="dropdown"> {{ user.userName }}</a>
-                    <span class="caret"></span>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.userName }} <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>
-                            <a href="#" ng-click="logout()">Sign out</a>
-                            </li>
+                            <li><a href="#" ng-click="logout()">Sign out</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -70,6 +67,10 @@
 </footer>
 <hr />
 
+<div pub-key="pub-c-02dee9ae-9627-4fb7-a486-a5cdf9df9749"
+         sub-key="sub-c-04a5c868-0374-11e3-bde1-02ee2ddab7fe"
+         ssl="off" origin="pubsub.pubnub.com" id="pubnub"></div>
+<script src="lib/pubnub-3.5.3.min.js"></script>
 <script src="lib/jquery.min.js"></script>
 <script src="lib/hmac-sha1.js"></script>
 <script src="lib/bootstrap.min.js"></script>
@@ -80,12 +81,15 @@
 <script src="js/controllers/TestServicesController.js"></script>
 <script src="js/controllers/PageController.js"></script>
 <script src="js/controllers/QuestionsController.js"></script>
+<script src="js/controllers/HighScoresController.js"></script>
 <script src="js/account/LoginCtrl.js"></script>
 <script src="js/account/SignUpCtrl.js"></script>
 <script src="js/account/identity.js"></script>
 <script src="js/services/testData.js"></script>
 <script src="js/services/questionsData.js"></script>
 <script src="js/services/usersData.js"></script>
+<script src="js/services/scoreData.js"></script>
+<script src=http://cdn.pubnub.com/pubnub-3.5.3.min.js></script>
 
 </body>
 </html>

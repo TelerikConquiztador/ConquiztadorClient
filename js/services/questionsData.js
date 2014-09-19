@@ -18,10 +18,10 @@ conquiztadorApp.factory('questionsData', function ($http) {
                 });
         },
         getClosedQuestion: function(id, success){
-            $http({method: 'GET', url: 'http://conquiztador.apphb.com/api/ClosedQuestions/All'})
+            $http({method: 'GET', url: 'http://conquiztador.apphb.com/api/ClosedQuestions/ById/' + id})
                 .success(function(data,status,headers,config){
-                    var closedQuestions = data;
-                    success(closedQuestions);
+                    console.log(data);
+                    success(data);
                 })
                 .error(function(data, status, headers, config){
 
@@ -29,6 +29,13 @@ conquiztadorApp.factory('questionsData', function ($http) {
         },
         postClosedQuestion: function(data){
             return $http.post('http://conquiztador.apphb.com/api/ClosedQuestions/Create', data);
+        },
+        postOpenQuestion: function (data) {
+            return $http.post('http://conquiztador.apphb.com/api/OpenQuestions/Create', data);
+        },
+        answerQuestion: function (answer) {
+            // TODO: CHANGE URL AND SET ANSWER
+            return $http.post('http://conquiztador.apphb.com/api/OpenQuestions/Create', data);
         }
     }
 });
