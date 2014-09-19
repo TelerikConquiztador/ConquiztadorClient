@@ -1,7 +1,7 @@
-﻿<div class="container">
+﻿<div class="container" >
     ﻿<div id="chatWrapper">
-        <textarea id="messagesArea" style="width:300px; height:300px" disabled></textarea>
-        <input class="form-control input-lg" placeholder="Message" id="input" style="width:300px;">
+        <textarea id="messagesArea" style="width:100%; height:500px" disabled></textarea>
+        <input class="form-control input-lg" placeholder="Message" id="input" style="width:80%;">
         <button class="btn btn-primary" id="button">Send</button>
     </div>
 </div>
@@ -20,9 +20,17 @@
 		});
 
 		PUBNUB.bind('mousedown', button, function () {
+            var user = jQuery.parseJSON( sessionStorage.getItem('user'));
+            var username = 'unnamed';
+            console.log(username);
+
+            if (user != null || user != undefined){
+                username = user.userName;
+            }
+
 			PUBNUB.publish({
 				'channel': 'my_channel',
-				'message': input.value
+				'message': username + ' : ' + input.value
 			});
 			
 		input.value = '';

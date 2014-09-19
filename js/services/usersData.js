@@ -43,7 +43,7 @@ conquiztadorApp.factory('usersData', function ($http) {
 //            return $http.post('http://localhost:34320/api/Account/Register', user);
         },
         update: function (user) {
-            return $http.post('http://conquiztador.apphb.com/api/Account/Register',
+            return $http.put('http://conquiztador.apphb.com/api/Account/Register',
                 {
                     Email: user.Email,
                     Password: user.Password,

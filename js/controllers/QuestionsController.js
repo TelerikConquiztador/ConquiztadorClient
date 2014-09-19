@@ -25,10 +25,8 @@ conquiztadorApp.controller('QuestionsController',
     };
 
     $scope.getClosedQuestion = function () {
-        var randomId = Math.floor(Math.random() * 18) + 11;
+        var randomId = Math.floor(Math.random() * 18);
         questionsData.getClosedQuestion(randomId, function (question) {
-//            questionsData.getClosedQuestion(11, function (question) {
-            console.log(question);
             $scope.closedQuestion = question;
         });
 
@@ -54,7 +52,7 @@ conquiztadorApp.controller('QuestionsController',
             $scope.gameInProgress = false;
             var user = $window.sessionStorage.getItem('user');
 
-            if (user.Result == null || user.Result == undefined)
+            if (user.Result != null || user.Result != undefined)
             {
                 user.Result = 0;
             }
