@@ -1,4 +1,4 @@
 ConquiztadorClient
 ==================
 
-Angular JS client for the TelerikConquiztador game.
+Angular JS client for the TelerikConquiztador game
