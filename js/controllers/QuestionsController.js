@@ -57,6 +57,9 @@ conquiztadorApp.controller('QuestionsController',
                 user.Result = 0;
             }
             user.Result += $scope.currentRightAnswers;
+            $window.sessionStorage.setItem('user',user);
+
+            usersData.update(user.Result);
 
 
             $scope.currentRightAnswers = 0;

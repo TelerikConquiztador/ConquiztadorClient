@@ -1,6 +1,6 @@
 'use strict';
 
-conquiztadorApp.factory('usersData', function ($http) {
+conquiztadorApp.factory('usersData', function ($http, $window) {
 
     return {
         login: function (user, success) {
@@ -42,13 +42,15 @@ conquiztadorApp.factory('usersData', function ($http) {
 
 //            return $http.post('http://localhost:34320/api/Account/Register', user);
         },
-        update: function (user) {
-            return $http.put('http://conquiztador.apphb.com/api/Account/Register',
-                {
-                    Email: user.Email,
-                    Password: user.Password,
-                    ConfirmPassword: user.Password
-                },
+        update: function (score) {
+            var user = jQuery.parseJSON($window.getItem('user'));
+            console.log(user);
+            var sessionKey = user.access_token;
+            console.log(sessionKey);
+
+            console.log(score)
+
+            return $http.put('http://conquiztador.apphb.com/api/Players/Update?score=' + score,
                 {
                     transformRequest: function (obj) {
                         var str = [];
@@ -57,6 +59,7 @@ conquiztadorApp.factory('usersData', function ($http) {
                         return str.join("&");
                     },
                     headers: {
+                        'Authorization': 'Bearer ' + sessionKey,
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 });
