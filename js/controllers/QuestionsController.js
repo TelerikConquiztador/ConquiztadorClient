@@ -40,10 +40,27 @@ conquiztadorApp.controller('QuestionsController',
 
     $scope.solveClosed = function (data) {
         console.log(data);
+
+        var elementToChangeId = '';
+        if ($scope.totalQuestionsAsked < 10){
+            elementToChangeId = '0';
+        }
+        elementToChangeId += $scope.totalQuestionsAsked;
+
         if (data == $scope.closedQuestion.CorrectAnswer){
             alert('Correct!');
             $scope.currentRightAnswers++;
+
+            $('#free' + elementToChangeId).hide();
+            $('#red' + elementToChangeId).hide();
+            $('#green' + elementToChangeId).show();
         }
+        else {
+            $('#free' + elementToChangeId).hide();
+            $('#green' + elementToChangeId).hide();
+            $('#red' + elementToChangeId).show();
+        }
+
 
         $scope.totalQuestionsAsked += 1;
         if ($scope.totalQuestionsAsked == 18)
@@ -63,5 +80,24 @@ conquiztadorApp.controller('QuestionsController',
         }
 
         $scope.closedQuestionActive = false;
+    }
+
+    function changeColor(elementId) {
+        //alert(elementId.slice(2));
+        if (elementId.charAt(0) === 'r') {
+            //alert(elementId);
+            $('#' + elementId).hide();
+            $('#green' + elementId.substr(elementId.length - 2)).show();
+        }
+        else if (elementId.charAt(0) === 'g') {
+            //alert(elementId);
+            $('#' + elementId).hide();
+            $('#free' + elementId.substr(elementId.length - 2)).show();
+        }
+        else if (elementId.charAt(0) === 'f') {
+            //alert(elementId);
+            $('#' + elementId).hide();
+            $('#red' + elementId.substr(elementId.length - 2)).show();
+        }
     }
 });
