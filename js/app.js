@@ -20,6 +20,9 @@ var conquiztadorApp = angular
             .when('/high-scores', {
                 templateUrl: 'templates/high-scores.html'
             })
+            .otherwise({
+                redirectTo: '/home'
+            });
     })
     .constant('toastr', toastr)
     .constant('baseUrl', 'http://conquiztador.apphb.com/api/')
