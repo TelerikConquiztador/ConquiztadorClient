@@ -4,16 +4,15 @@ conquiztadorApp.controller('LoginCtrl',
     function ($scope, $rootScope, $location, $window, identity, usersData, notifier) {
 
         $scope.identity = identity;
+        $scope.logged = false;
 
         $scope.login = function (user) {
             usersData.login(user)
                 .success(function (data) {
                     // authentication OK
-                    $rootScope.user = data;
-                    $rootScope.$emit('userChanged');
-                    $location.url('/');
                     $window.sessionStorage.setItem("user", JSON.stringify(data));
                     $scope.user = data;
+                    $scope.logged = true;
                     notifier.success("Welcome !");
                 })
                 .error(function (error) {
